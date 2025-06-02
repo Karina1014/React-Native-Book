@@ -1,9 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 
-export default function HomeScreen() {
+export default function ProfileScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>🏠 Bienvenido a la pantalla de inicio</Text>
+      <Text style={styles.text}>Tu perfil de usuario 👤</Text>
     </View>
   );
 }
