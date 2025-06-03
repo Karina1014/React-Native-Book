@@ -18,11 +18,18 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
+    if (!email || !password) {
+      alert("Por favor ingresa tu correo y contraseña.");
+      return;
+    }
+
     setIsLoading(true);
+
+    // Simulación de login. Aquí iría tu lógica real (API, Firebase, etc.)
     setTimeout(() => {
       setIsLoading(false);
-      router.push("./(tabs)/index");  // Navega a Home
+      router.replace("/(tabs)/profile"); // Redirige al Home
     }, 1500);
   };
 
@@ -97,7 +104,6 @@ export default function Login() {
             {isLoading ? (
               <ActivityIndicator color="#fff" />
             ) : (
-              
               <Text style={styles.buttonText}>Iniciar sesión</Text>
             )}
           </TouchableOpacity>
